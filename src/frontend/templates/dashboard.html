@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Discord Dashboard</title>
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+<header>
+  <h1>Discord Server Dashboard</h1>
+</header>
+<main>
+  <div class="stats">
+    <div class="stat">
+      <h2>Online</h2>
+      <span id="online-count">0</span>
+    </div>
+    <div class="stat">
+      <h2>All members</h2>
+      <span id="all-members-count">0</span>
+    </div>
+    <div class="stat">
+      <h2>In voice</h2>
+      <span id="invoice-count">2</span>
+    </div>
+  </div>
+  <div class="button-container">
+    <button id="update-button">Update</button>
+  </div>
+</main>
+<footer>
+  <div id="updated-time">Last update: 1/1/2000 2:00 AM</div>
+  <div class="footer-info">
+    © 2025 <a href="https://github.com/noinsts/discord-dashboard" target="_blank" rel="noopener">noinsts</a> —
+    <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT License</a>
+  </div>
+</footer>
+
+<!--- update data script -->
+<script src="static/scripts/update-data.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+:root {
+    --primary-button-color: #050340;
+    --primary-button-hover: #070476;
+    --primary-button-active: #030225;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(2,0,36,1) 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0 50%; }
+}
+
+header {
+    text-align: center;
+    padding: 100px 20px 20px;
+    font-size: 32px;
+}
+
+header h1 {
+    columns: 1;
+    column-gap: 20px;
+    hyphens: auto;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.2;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 80px;
+    padding: 40px 20px 60px;
+}
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    width: 80%;
+    max-width: 800px;
+    gap: 15px;
+    justify-content: center;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    width: calc(33.3% - 10px);
+    min-width: 120px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.stat h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.stat span {
+    font-size: 1em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: 250px;
+    height: 50px;
+    background-color: #080876;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#update-button {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: var(--primary-button-color);
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(5, 3, 64, 0.5);
+}
+
+#update-button:hover {
+    background-color: var(--primary-button-hover);
+    box-shadow: 0 6px 15px rgba(7, 4, 118, 0.7);
+    transform: translateY(-3px);
+}
+
+#update-button:active {
+    background-color: var(--primary-button-active);
+    box-shadow: 0 2px 6px rgba(3, 2, 37, 0.7);
+    transform: translateY(0);
+}
+
+footer {
+    height: auto;
+    min-height: 60px;
+    padding: 15px 20px;
+    color: gray;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+}
+
+footer a {
+    color: gray;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* Десктопи та великі екрани (від 1280px) */
+@media (min-width: 1280px) {
+    .stats {
+        max-width: 1000px;
+        gap: 20px;
+    }
+
+    .stat {
+        width: 240px;
+        height: 180px;
+        padding: 20px;
+    }
+
+    .stat h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .stat span {
+        font-size: 3em;
+    }
+}
+
+/* Планшети */
+@media (max-width: 768px) {
+    header {
+        padding-top: 40px;
+        font-size: 24px;
+    }
+
+    main {
+        gap: 40px;
+        padding: 30px 15px 40px;
+    }
+
+    .stats {
+        width: 95%;
+        gap: 12px;
+    }
+
+    .stat {
+        width: calc(50% - 6px);
+        height: 100px;
+        min-width: 140px;
+    }
+
+    .stat h2 {
+        font-size: 1em;
+    }
+
+    .stat span {
+        font-size: 1.5em;
+    }
+}
+
+/* Мобільні пристрої */
+@media (max-width: 480px) {
+    header {
+        padding-top: 40px;
+        font-size: 24px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        columns: 1;
+        text-align: center;
+    }
+
+    main {
+        gap: 40px;
+        padding: 30px 15px 40px;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 25px;
+        max-width: 400px;
+    }
+
+    .stat {
+        width: 90%;
+        height: 140px;
+        min-width: unset;
+    }
+
+    .stat h2 {
+        font-size: 1.4rem;
+        margin: 0 0 15px 0;
+    }
+
+    .stat span {
+        font-size: 2.8rem;
+    }
+
+    .stat:hover {
+        transform: none;
+    }
+
+    .stat:active {
+        transform: scale(0.98);
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .button-container {
+        width: 300px;
+        height: 70px;
+        padding: 6px;
+    }
+
+    #update-button {
+        font-size: 1.5rem;
+        border-radius: 35px;
+    }
+
+    #update-button:hover {
+        transform: none;
+    }
+
+    #update-button:active {
+        transform: scale(0.95);
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 25px 20px;
+        text-align: center;
+        line-height: 1.6;
+    }
+}
+
+/* Для дуже маленьких екранів */
+@media (max-width: 360px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .stat {
+        height: 120px;
+    }
+
+    .stat h2 {
+        font-size: 1.2rem;
+    }
+
+    .stat span {
+        font-size: 2.4rem;
+    }
+
+    .button-container {
+        width: 280px;
+        height: 65px;
+    }
+
+    #update-button {
+        font-size: 1.3rem;
+    }
+}
+
+/* Для великих телефонів */
+@media (min-width: 400px) {
+    .stats {
+        max-width: 500px;
+    }
+
+    .stat {
+        height: 160px;
+    }
+
+    .stat h2 {
+        font-size: 1.6rem;
+    }
+
+    .stat span {
+        font-size: 3.2rem;
+    }
+}

@@ -1,0 +1,20 @@
+[project]
+name = "discord-dashboard"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Andriy",email = "114863893+noinsts@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = "==3.12.4"
+dependencies = [
+    "flask==3.1.1",
+    "livereload>=2.6.3,<3.0.0",
+    "discord.py==2.3.2",
+    "python-dotenv==1.1.1"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
